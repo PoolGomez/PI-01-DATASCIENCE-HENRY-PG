@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import RedirectResponse
 import pandas as pd
 #from numpy import numpy
 
@@ -10,7 +11,7 @@ titles = pd.read_csv(r"datasets/titles.csv")
 #http://127.0.0.1:8000
 @app.get("/")
 def index():
-    return {"mensaje":"Hello word"}
+    return RedirectResponse("https://titles-pg-deploy.onrender.com/docs")
 
 ##Cantidad de veces que aparece una keyword en el título de peliculas/series, por plataforma
 @app.get('/keyword/{plataforma}/{keyword}') #Segunda ruta
