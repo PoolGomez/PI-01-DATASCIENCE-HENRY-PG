@@ -2,10 +2,10 @@ from fastapi import FastAPI
 import pandas as pd
 #from numpy import numpy
 
+app = FastAPI()
 
 #titles = pd.read_csv(r"titles.csv")
 titles = pd.read_csv("https://github.com/PoolGomez/PI-01-DATASCIENCE-HENRY-PG/blob/main/datasets/titles.csv")
-app = FastAPI()
     
 #http://127.0.0.1:8000
 @app.get("/")
