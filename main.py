@@ -4,8 +4,8 @@ import pandas as pd
 
 app = FastAPI()
 
-#titles = pd.read_csv(r"titles.csv")
-titles = pd.read_csv("https://github.com/PoolGomez/PI-01-DATASCIENCE-HENRY-PG/blob/main/datasets/titles.csv")
+titles = pd.read_csv(r"datasets/titles.csv")
+#titles = pd.read_csv("https://github.com/PoolGomez/PI-01-DATASCIENCE-HENRY-PG/blob/main/datasets/titles.csv")
     
 #http://127.0.0.1:8000
 @app.get("/")
