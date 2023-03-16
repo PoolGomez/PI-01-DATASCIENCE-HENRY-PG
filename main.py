@@ -14,7 +14,7 @@ def index():
 
 ##Cantidad de veces que aparece una keyword en el título de peliculas/series, por plataforma
 @app.get('/keyword/{plataforma}/{keyword}') #Segunda ruta
-def get_word_count(plataforma, keyword):
+async def get_word_count(plataforma, keyword):
     canal= titles[titles['id'].str.contains(plataforma[0], case= False)]
     cantidad= canal[canal['title'].str.contains(keyword, case= False)]
     return {'plataforma':plataforma, 'cantidad':len(cantidad)}
